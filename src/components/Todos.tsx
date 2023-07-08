@@ -34,7 +34,7 @@ export const TodoView = observer<TodoViewProps>(({ todo }) => (
     <input
       type="checkbox"
       checked={todo.finished}
-      onClick={() => todo.toggle()}
+      onChange={() => todo.toggle()}
     />
     {todo.title}
   </li>
