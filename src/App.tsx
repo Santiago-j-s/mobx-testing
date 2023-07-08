@@ -2,6 +2,7 @@ import { autorun } from 'mobx';
 import { observer } from 'mobx-react-lite';
 import { TodoListView } from './components/Todos';
 import { TodoList } from './store/TodoList';
+import './styles/main.css';
 
 const todos = new TodoList();
 

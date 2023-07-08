@@ -1,4 +1,5 @@
 import { observer } from 'mobx-react-lite';
+import { Button } from '../atoms/Button';
 import { Todo } from '../store/Todo';
 import { TodoList } from '../store/TodoList';
 
@@ -18,9 +19,9 @@ const RefreshButton = observer<TodoListViewProps>(({ todoList }) => {
   };
 
   return (
-    <button disabled={todoList.loading} onClick={handleClick}>
+    <Button disabled={todoList.loading} onClick={handleClick}>
       {todoList.loading ? 'Loading' : 'Refresh'}
-    </button>
+    </Button>
   );
 });
 
@@ -32,9 +33,9 @@ const LoadDataButton = observer<TodoListViewProps>(({ todoList }) => {
   };
 
   return (
-    <button disabled={todoList.loading} onClick={handleClick}>
+    <Button disabled={todoList.loading} onClick={handleClick} className="mx-5">
       {todoList.loading ? 'Loading' : 'Load Data'}
-    </button>
+    </Button>
   );
 });
 
