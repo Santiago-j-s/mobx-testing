@@ -1,5 +1,5 @@
-import { action, computed, makeObservable, observable } from "mobx";
-import { Todo } from "./Todo";
+import { action, computed, makeObservable, observable } from 'mobx';
+import { Todo } from './Todo';
 
 export class TodoList {
   todos: Todo[] = [];

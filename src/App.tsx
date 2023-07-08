@@ -1,20 +1,11 @@
-import { configure } from "mobx";
-import { TodoListView } from "./components/Todos";
-import { Todo } from "./store/Todo";
-import { TodoList } from "./store/TodoList";
+import { TodoListView } from './components/Todos';
+import { Todo } from './store/Todo';
+import { TodoList } from './store/TodoList';
 
-const store = new TodoList([
-  new Todo("Get Coffee"),
-  new Todo("Write simpler code"),
+const todos = new TodoList([
+  new Todo('Get Coffee'),
+  new Todo('Write simpler code'),
 ]);
-
-configure({
-  enforceActions: "always",
-  computedRequiresReaction: true,
-  reactionRequiresObservable: true,
-  observableRequiresReaction: true,
-  disableErrorBoundaries: true,
-});
 
 // reaction(
 //   () => store.finishedTodoCount === 2,
@@ -24,7 +15,7 @@ configure({
 // );
 
 function App() {
-  return <TodoListView todoList={store} />;
+  return <TodoListView todoList={todos} />;
 }
 
 export default App;

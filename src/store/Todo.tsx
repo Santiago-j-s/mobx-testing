@@ -1,8 +1,8 @@
-import { action, computed, makeObservable, observable } from "mobx";
+import { action, computed, makeObservable, observable } from 'mobx';
 
 export class Todo {
   id = Math.random();
-  title = "";
+  title = '';
   finished = false;
 
   constructor(title: string) {

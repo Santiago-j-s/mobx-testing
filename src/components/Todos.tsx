@@ -1,6 +1,6 @@
-import { observer } from "mobx-react-lite";
-import { Todo } from "../store/Todo";
-import { TodoList } from "../store/TodoList";
+import { observer } from 'mobx-react-lite';
+import { Todo } from '../store/Todo';
+import { TodoList } from '../store/TodoList';
 
 interface TodoListViewProps {
   todoList: TodoList;
@@ -10,7 +10,7 @@ const TasksLeft = observer<TodoListViewProps>(({ todoList }) => (
   <div>Tasks left: {todoList.unfinishedTodoCount}</div>
 ));
 
-TasksLeft.displayName = "TasksLeft";
+TasksLeft.displayName = 'TasksLeft';
 
 export const TodoListView = observer<TodoListViewProps>(({ todoList }) => (
   <div>
@@ -23,7 +23,7 @@ export const TodoListView = observer<TodoListViewProps>(({ todoList }) => (
   </div>
 ));
 
-TodoListView.displayName = "TodoListView";
+TodoListView.displayName = 'TodoListView';
 
 interface TodoViewProps {
   todo: Todo;
@@ -40,4 +40,4 @@ export const TodoView = observer<TodoViewProps>(({ todo }) => (
   </li>
 ));
 
-TodoView.displayName = "TodoView";
+TodoView.displayName = 'TodoView';
