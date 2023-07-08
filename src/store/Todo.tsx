@@ -7,6 +7,7 @@ export class Todo {
 
   constructor(title: string) {
     makeObservable(this, {
+      id: observable,
       title: observable,
       finished: observable,
       toggle: action,
