@@ -31,6 +31,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
   },
   ignorePatterns: ['.eslintrc.cjs'],
 };

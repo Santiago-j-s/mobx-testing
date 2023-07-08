@@ -12,6 +12,34 @@ const TasksLeft = observer<TodoListViewProps>(({ todoList }) => (
 
 TasksLeft.displayName = 'TasksLeft';
 
+const RefreshButton = observer<TodoListViewProps>(({ todoList }) => {
+  const handleClick = async () => {
+    await todoList.refresh();
+  };
+
+  return (
+    <button disabled={todoList.loading} onClick={handleClick}>
+      {todoList.loading ? 'Loading' : 'Refresh'}
+    </button>
+  );
+});
+
+RefreshButton.displayName = 'RefreshButton';
+
+const LoadDataButton = observer<TodoListViewProps>(({ todoList }) => {
+  const handleClick = async () => {
+    await todoList.loadData();
+  };
+
+  return (
+    <button disabled={todoList.loading} onClick={handleClick}>
+      {todoList.loading ? 'Loading' : 'Load Data'}
+    </button>
+  );
+});
+
+LoadDataButton.displayName = 'LoadDataButton';
+
 export const TodoListView = observer<TodoListViewProps>(({ todoList }) => (
   <div>
     <ul>
@@ -20,6 +48,8 @@ export const TodoListView = observer<TodoListViewProps>(({ todoList }) => (
       ))}
     </ul>
     <TasksLeft todoList={todoList} />
+    <RefreshButton todoList={todoList} />
+    <LoadDataButton todoList={todoList} />
   </div>
 ));
 
