@@ -25,16 +25,14 @@ export class TodoList {
     titles.forEach((title) => this.todos.push(new Todo(title)));
   }
 
-  async loadData() {
+  *loadData() {
     this.loading = true;
 
     try {
-      await sleep(1000).then(
-        action('loadData', () => {
-          this.todos = [];
-          this.add(['Get Coffee', 'Play Game', 'Read Book']);
-        }),
-      );
+      yield sleep(1000);
+
+      this.todos = [];
+      this.add(['Get Coffee', 'Play Game', 'Read Book']);
     } catch (error) {
       this.error = 'Error loading todos';
     }

@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { action, computed, makeObservable, observable } from 'mobx';
 
 export class Todo {
   id = Math.random();
@@ -6,7 +6,13 @@ export class Todo {
   finished = false;
 
   constructor(title: string) {
-    makeAutoObservable(this);
+    makeObservable(this, {
+      id: observable,
+      title: observable,
+      finished: observable,
+      titleUppercased: computed,
+      toggle: action,
+    });
 
     this.title = title;
   }

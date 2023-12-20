@@ -28,8 +28,8 @@ const RefreshButton = observer<TodoListViewProps>(({ todoList }) => {
 RefreshButton.displayName = 'RefreshButton';
 
 const LoadDataButton = observer<TodoListViewProps>(({ todoList }) => {
-  const handleClick = async () => {
-    await todoList.loadData();
+  const handleClick = () => {
+    todoList.loadData();
   };
 
   return (
